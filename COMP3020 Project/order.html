@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="COMP 3020 project">
+	<meta name="keywords" content="Ordering system">
+	<title>ABC Restaurant</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+<body>
+		<ul class="navBar">
+			<li>
+				<a href="index.html"><img src="abc.png" style="width:50px;height: 50px;vertical-align: middle;"></a>
+			</li>
+			<li><a href="javascript:void(0)" class="nav-option">ORDER</a></li>
+			<li><a href="promotion.html">PROMOTIONS</a></li>
+			<li><a href="map.html">LOCATION</a></li>
+		</ul>
+
+
+
+	<div id="checkout-bar">
+
+		<button id="checkout-button">CHECKOUT</button>
+		<div id='reviewModal' class='modal'>
+			<div class="modal-content">
+				<span class="close">&times;</span>	
+				<br><br>
+				<div class="header"><h3>REVIEW</h3></div>
+				<div class="tag">
+					<div class="reviewName">
+						<h2>Item name</h2>
+					</div>
+					<div class="reviewPrice">
+						<h2>Price</h2>
+					</div>
+					<div class="reviewQuantity">
+						<h2>Quantity</h2>
+					</div>
+					<div class="reviewTotal">
+						<h2>Total</h2>
+					</div>
+																
+				</div>
+				<div class="list">
+					<ul class="review">
+						
+					</ul>
+				</div>
+
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>	
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+
+
+			
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div style="color: black;width: 100%;margin-top: 0;">
+			<h3>_____________________________________</h3>
+			<div id="checkoutTotal"><h1>Total : $0.00</h1></div>
+		</div>
+		<div style="margin-bottom: 30;">
+			<ul class="checkout">
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="page-content">
+		<div id="menuPic" class="showing">
+			<div class="blockMenu1">
+				<div class="containerMenu">
+					<a href="javascript:void(0)"><img src="burgerMenu.jpg" style="width: 60%"></a>
+					<h2 class="top-leftMenu">
+						<span class="emphasis">
+							B<br>u<br>r<br>g<br>e<br>r<br>s
+						</span>
+					</h2>
+					
+				</div>
+					
+			</div>
+			<div class="blockMenu2">
+				<div class="containerMenu">
+					<a href="javascript:void(0)"><img src="chickenMenu.jpg" style="width: 60%"></a>
+					<h2 class="top-leftMenu">
+						<span class="emphasis">
+							W<br>I<br>N<br>G<br>S
+						</span>
+					</h2>
+					
+				</div>
+					
+			</div>
+			<div class="blockMenu3">
+				<div class="containerMenu">
+					<a href="javascript:void(0)"><img src="chipMenu.gif" style="width: 60%"></a>
+					<h2 class="top-leftMenu">
+						<span class="emphasis">
+							S<br>I<br>D<br>E<br>S
+						</span>
+					</h2>
+					
+				</div>
+					
+			</div>
+			<div class="blockMenu4">
+				<div class="containerMenu">
+					<a href="javascript:void(0)"><img src="beverageMenu.jpg" style="width: 60%"></a>
+					<h2 class="top-leftMenu">
+						<span class="emphasis">
+							B<br>e<br>v<br>e<br>r<br>a<br>g<br>e<br>s
+						</span>
+					</h2>
+					
+				</div>
+					
+			</div>
+		</div>
+
+		<div id="burgerMenu" class="hiding">
+			<div>
+				<button id="burgerBack" type="button" class="customize-button">Back to Menu</button>
+			</div>
+			<div class="buildBurger">
+				<div class="panel">
+					<h3> BUILD YOUR OWN </h3>
+				</div>
+				<div class="foodBlock">
+					<img src="bun.jpg" style="width: 80%">
+					<div class="panel2">
+						<h4 class="name">Customize your delicious burger</h4>
+						<p><strong>Description:</strong> <span class="description">Select a variety of vegetables and perfect patties!</span></p>
+	                        <h4>$<span class="price">5.99</span></h4>
+					</div>
+					<button id="buildOwn" class="customize-button">CUSTOMIZE</button>
+					<div id="modalBurger-1" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CHOOSE EVERYTHING YOU WANT FOR ONLY 5.99</h2>
+						  	 <h3>MEAT</h3>
+						  	 <form>
+							    <input type="radio" name="meat0" id="Beef" value="Beef" checked >Beef<br>
+							    <input type="radio" name="meat0" id="Chicken" value="Chicken" >Chicken<br>
+							    <input type="radio" name="meat0" id="Turkey" value="Turkey" >Turkey<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg0" id="pickle" value="Pickle" >Pickle<br>
+							    <input type="checkbox" name="veg0" id="onion" value="Onion">Onion<br>
+							    <input type="checkbox" name="veg0" id="lettuce" value="Lettuce">Lettuce<br>
+							    <input type="checkbox" name="veg0" id="tomato" value="Tomato" >Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce0" id="Classic Mayonaise" value="Classic Mayonaise">Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce0" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce0" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce0" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce0" id="ketchup" value="Ketchup">Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese" id="Cheddar" value="Cheddar">Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger0('CUSTOMIZED BURGER',5.99)}">Order</button>
+						  </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="popularBurger">
+				<div class="panel">
+					<h3> POPULAR BURGER </h3>
+
+				</div>
+				
+
+				<div class="foodBlock">
+					<img src="cheeseburger.jpg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Classic Cheese Burger</h4>
+					<p><strong>Description:</strong> <span class="description">Un-negotiable! Mighty angus patty,
+                         served on a roll with onion, tomato,cheese blend and our classic mayo.</span></p>
+                        <h4>$<span class="price">6.49</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('CLASSIC CHEESE BURGER',6.49)}">ORDER</button>
+					<button id="buildCheeseburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id='modalBurger-2' class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR CHEESE BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	 <form>
+							    <input type="radio" name="meat1" id="beef" value="Beef" checked >Beef with Bacon Stripes<br>
+							    <input type="radio" name="meat1" id="chicken" value="Chicken" >Chicken <br>
+							    <input type="radio" name="meat1" id="turkey" value="Turkey" >Turkey<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg1" id="pickle" value="Pickle" >Pickle<br>
+							    <input type="checkbox" name="veg1" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg1" id="lettuce" value="Lettuce">Lettuce<br>
+							    <input type="checkbox" name="veg1" id="tomato" value="Tomato" checked>Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce1" id="Classic Mayonaise" value="Classic Mayonaise" checked>Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce1" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce1" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce1" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce1" id="ketchup" value="Ketchup" checked>Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese" id="Cheddar" value="Cheddar"checked>Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger1('Classic Cheese Burger',6.49)}">Order</button>
+						  </div>
+					</div>
+				</div>
+
+				<div class="foodBlock">
+					<img src="bltBurger.jpg" style="width: 96%">
+					<div class="panel2">
+					<h4 class="name">BLT Burger</h4>
+					<p><strong>Description:</strong> <span class="description">Mouthwatering and Crunchy! Crispy bacon stripes,
+                         served on a roll with lettuce, onion, tomato, mustard and mayo.</span></p>
+                        <h4>$<span class="price">6.99</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('BLT BURGER',6.99)}">ORDER</button>
+					<button id="bltburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalBurger-3" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR BLT BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	  <form>
+							    <input type="radio" name="meat2" id="beef" value="Beef with Bacon Stripes" checked >Beef with Bacon Stripes<br>
+							    <input type="radio" name="meat2" id="chicken" value="Chicken" >Chicken <br>
+							    <input type="radio" name="meat2" id="turkey" value="Turkey" >Turkey<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg2" id="pickle" value="Pickle" >Pickle<br>
+							    <input type="checkbox" name="veg2" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg2" id="lettuce" value="Lettuce" checked>Lettuce<br>
+							    <input type="checkbox" name="veg2" id="tomato" value="Tomato" checked>Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce2" id="Classic Mayonaise" value="Classic Mayonaise" checked>Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce2" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce2" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce2" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce2" id="ketchup" value="Ketchup" checked>Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese2" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese2" id="cheddar" value="Cheddar"checked>Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger2('BLT BURGER',6.99)}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+					
+				
+
+				<div class="foodBlock">
+					<img src="CrispyChicken.jpg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Crispy Chicken Burger</h4>
+					<p><strong>Description:</strong> <span class="description">Crispy chicken tenders,
+                         served on a toasted bun with honey mustard coleslaw, onion, lettuce and classic mayo.</span></p>
+                        <h4>$<span class="price">7.49</span></h4>
+				</div>
+				<button class="order-button" onclick="{addFood('CRISPY CHICKEN BURGER',6.99)}">ORDER</button>
+					<button id="crispyburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalBurger-4" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR CRISPY CHICKEN BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	  <form>
+							    <input type="radio" name="meat3" id="beef" value="Beef" >Beef<br>
+							    <input type="radio" name="meat3" id="chicken" value="Crispy Chicken" checked>Crispy Chicken <br>
+							    <input type="radio" name="meat3" id="turkey" value="Turkey" >Turkey<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg3" id="pickle" value="Pickle" >Pickle<br>
+							    <input type="checkbox" name="veg3" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg3" id="lettuce" value="Lettuce" checked>Lettuce<br>
+							    <input type="checkbox" name="veg3" id="tomato" value="Tomato">Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce3" id="Classic Mayonaise" value="Classic Mayonaise" checked>Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce3" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce3" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw" checked>Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce3" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce3" id="ketchup" value="Ketchup" >Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese3" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese3" id="cheddar" value="Cheddar"checked>Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger3('CRISPY CHICKEN BURGER',7.49)}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+
+				<div class="foodBlock">
+					<img src="giantBurger.png" style="width: 67.5%">
+					<div class="panel2">
+					<h4 class="name">Giant Burger</h4>
+					<p><strong>Description:</strong> <span class="description">Our giant burger is made out of 3 Jumbo patties,
+                        topped with lettuce, onion, pickles, tomato and cheddar cheese.</span></p>
+                        <h4>$<span class="price">8.99</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('GIANT BURGER',8.99)}">ORDER</button>
+					<button id="giantburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalBurger-5" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR GIANT BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	   <form>
+							    <input type="radio" name="meat4" id="beef" value="Beef(3 patties)" checked>Beef(3 patties)<br>
+							    <input type="radio" name="meat4" id="chicken" value="Chicken(3 patties)" >Chicken(3 patties) <br>
+							    <input type="radio" name="meat4" id="turkey" value="Turkey(3 patties)" >Turkey(3 patties)<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg4" id="pickle" value="Pickle" checked >Pickle<br>
+							    <input type="checkbox" name="veg4" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg4" id="lettuce" value="Lettuce" checked>Lettuce<br>
+							    <input type="checkbox" name="veg4" id="tomato" value="Tomato"checked>Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce4" id="Classic Mayonaise" value="Classic Mayonaise" checked>Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce4" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce4" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce4" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce4" id="ketchup" value="Ketchup" checked >Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese4" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese4" id="cheddar" value="Cheddar"checked>Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger4('GIANT BURGER',8.99)}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+				<div class="foodBlock">
+					<img src="special.jpg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">ABC Special Burger</h4>
+					<p><strong>Description:</strong> <span class="description">Savoury and tasty! Abc special patty,
+                         served on a sesame seed bun with bacon, onion, tomato and Abc special sauce.</span></p>
+                        <h4>$<span class="price">8.49</span></h4> 
+				</div>
+					<button class="order-button" onclick="{addFood('ABC SPECIAL BURGER',8.49)}">ORDER</button>
+					<button id="specialburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalBurger-6" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR ABC SPECIAL BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	  <form>
+							    <input type="radio" name="meat5" id="beef" value="Beef with Bacon Stripes" >Beef with Bacon Stripes<br>
+							    <input type="radio" name="meat5" id="chicken" value="Chicken with Bacon Stripes" checked>Crispy Chicken with Bacon Stripes<br>
+							    <input type="radio" name="meat5" id="turkey" value="Turkey with Bacon Stripes" >Turkey with Bacon Stripes<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg5" id="pickle" value="Pickle" >Pickle<br>
+							    <input type="checkbox" name="veg5" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg5" id="lettuce" value="Lettuce">Lettuce<br>
+							    <input type="checkbox" name="veg5" id="tomato" value="Tomato"checked>Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce5" id="Classic Mayonaise" value="Classic Mayonaise" checked>Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce5" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce5" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce5" id="mustard" value="Mustard">Mustard<br>
+							    <input type="checkbox" name="sauce5" id="ABC Special sauce" value="ABC Special sauce" checked>ABC Special sauce<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese5" id="Mozzarella" value="Mozzarella">Mozzarella<br>
+							    <input type="checkbox" name="cheese5" id="cheddar" value="Cheddar"checked>Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger5('ABC SPECIAL BURGER',8.49)}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+
+				<div class="foodBlock">
+					<img src="beyondBurger.jpeg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Beyond Meat Burger</h4>
+					<p><strong>Description:</strong> <span class="description">A Meat patty from plants! Topped with lettuce, onion, tomato, pickles, cheese and served on a toasted bun.</span></p>
+                        <h4>$<span class="price">7.99</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('BEYOND BURGER',7.99)}">ORDER</button>
+					<button id="beyondburger" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalBurger-7" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR BEYOND BURGER</h2>
+						  	 <h3>MEAT</h3>
+						  	  <form>
+							   <input type="radio" name="meat6" id="beyond meat" value="Beyond Meat" checked>Beyond Meat<br>
+							    <input type="radio" name="meat6" id="beef" value="Beef" >Beef<br>
+							    <input type="radio" name="meat6" id="chicken" value="Crispy Chicken" >Chicken <br>
+							    <input type="radio" name="meat6" id="turkey" value="Turkey" >Turkey<br><br>
+							</form>
+							<h3>VEGETABLES</h3>
+						 	<form>
+							    <input type="checkbox" name="veg6" id="pickle" value="Pickle"checked >Pickle<br>
+							    <input type="checkbox" name="veg6" id="onion" value="Onion" checked>Onion<br>
+							    <input type="checkbox" name="veg6" id="lettuce" value="Lettuce" checked>Lettuce<br>
+							    <input type="checkbox" name="veg6" id="tomato" value="Tomato"checked>Tomato<br><br>
+							</form>
+							<h3>SAUCES</h3>
+						 	<form>
+							    <input type="checkbox" name="sauce6" id="Classic Mayonaise" value="Classic Mayonaise">Classic Mayonaise<br>
+							    <input type="checkbox" name="sauce6" id="ranch" value="Ranch">Ranch<br>
+ 								<input type="checkbox" name="sauce6" id="Honey Mustard Coleslaw" value="Honey Mustard Coleslaw">Honey Mustard Coleslaw<br>
+							    <input type="checkbox" name="sauce6" id="mustard" value="Mustard"checked>Mustard<br>
+							    <input type="checkbox" name="sauce6" id="ketchup" value="Ketchup"checked >Ketchup<br><br>
+							</form>
+							<h3>CHEESE</h3>
+						 	<form>
+							    <input type="checkbox" name="cheese6" id="Mozzarella" value="Mozzarella"checked>Mozzarella<br>
+							    <input type="checkbox" name="cheese6" id="cheddar" value="Cheddar">Cheddar<br>
+							</form>
+							<button type="button" class="order-button" onclick="{customizeBurger6('BEYOND BURGER',7.99)}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			</div>
+		</div>
+		<div id="wingMenu" class="hiding">
+			<div>
+				<button id="wingBack" type="button" class="customize-button">Back to Menu</button>
+			</div>
+			<div style="width: 80%;">
+				<div class="panel" style="text-align: center;">
+					<h3> POPULAR WINGS </h3>
+				</div>
+			</div>	
+			<div class="beverageBlock">
+				<img src="honeyGalzed.jpg" style="width: 80%">
+				<div class="panel2">
+					<h4 class="name">Honey glazed Wings</h4>
+								
+			        <h4><span class="price">5 for $4.99</span></h4>
+				</div>
+				<button class="order-button" onclick="{addFood('HONEY GLAZED WINGS',4.99)}">ORDER</button>
+					<button id="honeyGalzed" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalWings-1" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR HONEY GLAZED WINGS</h2>					  
+							
+							<h3>DIPINGS</h3>
+						 	<form>
+							    <input type="radio" name="se" id="Honey glazed dip" value="Honey glazed dip" checked>Honey glazed dip<br>
+							    <input type="radio" name="se" id="Buffalo hot sauce" value="Buffalo hot sauce">Buffalo hot sauce<br>
+ 								<input type="radio" name="se" id="Creamy garlic" value="Creamy garlic">Creamy garlic<br>
+							    <input type="radio" name="se" id="Sweet chili thai" value="Sweet chili thai">Sweet chili thai<br>
+							    <input type="radio" name="se" id="Cheddar jalapeno" value="Cheddar jalapeno">Cheddar jalapeno<br><br>
+							</form>
+							
+							<button type="button" class="order-button" onclick="{customize('HONEY GLAZED WINGS',4.99,'modalWings-1')}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+
+				<div class="beverageBlock">
+				<img src="crispyWings.jpeg" style="width: 100%">
+				<div class="panel2">
+					<h4 class="name">Crispy Wings</h4>
+								
+			        <h4><span class="price">5 for $4.99</span></h4>
+				</div>
+				<button class="order-button" onclick="{addFood('CRISPY WINGS',4.99)}">ORDER</button>
+					<button id="crispyWings" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalWings-2" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR CRISPY WINGS</h2>					  
+							
+							<h3>DIPINGS</h3>
+						 	<form>
+							    <input type="radio" name="se" id="Honey glazed dip" value="Honey glazed dip" >Honey glazed dip<br>
+							    <input type="radio" name="se" id="Buffalo hot sauce" value="Buffalo hot sauce">Buffalo hot sauce<br>
+ 								<input type="radio" name="se" id="Creamy garlic" value="Creamy garlic">Creamy garlic<br>
+							    <input type="radio" name="se" id="Sweet chili thai" value="Sweet chili thai" checked>Sweet chili thai<br>
+							    <input type="radio" name="se" id="Cheddar jalapeno" value="Cheddar jalapeno">Cheddar jalapeno<br><br>
+							</form>
+							
+							<button type="button" class="order-button" onclick="{customize('CRISPY WINGS',4.99,'modalWings-2')}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+
+							
+							
+			<div class="beverageBlock">
+				<img src="buffaloWings.jpg" style="width: 60%">
+					<div class="panel2">
+						<h4 class="name">Buffalo Wings</h4>
+								
+			            <h4><span class="price">5 for $4.49</span></h4>
+					</div>
+				<button class="order-button" onclick="{addFood('BUFFALO WINGS',4.99)}">ORDER</button>
+					<button id="buffaloWings" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalWings-3" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR BUFFALO WINGS</h2>					  
+							
+							<h3>DIPINGS</h3>
+						 	<form>
+							    <input type="radio" name="dip" id="Honey glazed dip" value="Honey glazed dip" >Honey glazed dip<br>
+							    <input type="radio" name="dip" id="Buffalo hot sauce" value="Buffalo hot sauce" checked>Buffalo hot sauce<br>
+ 								<input type="radio" name="dip" id="Creamy garlic" value="Creamy garlic">Creamy garlic<br>
+							    <input type="radio" name="dip" id="Sweet chili thai" value="Sweet chili thai">Sweet chili thai<br>
+							    <input type="radio" name="dip" id="Cheddar jalapeno" value="Cheddar jalapeno">Cheddar jalapeno<br><br>
+							</form>
+							
+							<button type="button" class="order-button" onclick="{customize('BUFFALO WINGS',4.99,'modalWings-3')}">Order</button>
+						  
+					</div>
+				</div>
+			</div>
+			</div>
+
+		<div id="sideMenu" class="hiding">
+				
+			<div>
+				<button id="sideBack" type="button" class="customize-button">Back to Menu</button>
+			</div>
+			<div style="width: 80%;">
+				<div class="panel" style="text-align: center;">
+					<h3> SIDE DISHES </h3>
+				</div>
+			</div>	
+				<div class="beverageBlock">
+					<img src="chipMenu.gif" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Classic french fries</h4>
+					
+                        <h4><span class="price">Regular : $2.49</span></h4>
+				</div>
+				<button class="order-button" onclick="{addFood('French fries',2.49)}">ORDER</button>
+					<button id="frenchfries" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalSides-1" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR FRENCH FRIES</h2>					  
+							
+							<h3>CONDIMENTS</h3>
+				<form>
+					<input type="radio" name="condiments" id="ketchup" value="Ketchup" checked>Ketchup<br>
+				    <input type="radio" name="condiments" id="Mustard" value="Mustard">Mustard<br>
+					<input type="radio" name="condiments" id="Ranch" value="Ranch">Ranch<br>
+				</form>
+					<button type="button" class="order-button" onclick="{customize('French fries',2.49,'modalSides-1')}">Order</button>
+					
+				</div>
+				</div>
+			</div>
+				<div class="beverageBlock">
+					<img src="wedges.jpg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Potato Wedges</h4>
+					
+                        <h4><span class="price">10 for $4.99</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('Potato wedges',4.99)}">ORDER</button>
+					<button id="wedges" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalSides-2" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR POTATO WEDGES</h2>					  
+							
+							<h3>CONDIMENTS</h3>
+				<form>
+					<input type="radio" name="condiments" id="ketchup" value="Ketchup" checked>Ketchup<br>
+				    <input type="radio" name="condiments" id="Mustard" value="Mustard">Mustard<br>
+					<input type="radio" name="condiments" id="Ranch" value="Ranch">Ranch<br>
+				</form>
+					<button type="button" class="order-button" onclick="{customize('POTATO WEDGES',4.99,'modalSides-2')}">Order</button>
+					
+				</div>
+				</div>
+			</div>
+				
+				<div class="beverageBlock">
+					<img src="onionRings.jpg" style="width: 80%">
+					<div class="panel2">
+					<h4 class="name">Onion Rings</h4>
+					
+                        <h4><span class="price">Regular : $2.99</span></h4>
+				</div>
+					<button class="order-button" onclick="{addFood('Onion Rings',2.99)}">ORDER</button>
+					<button id="onionRings" class="customize-button" on>CUSTOMIZE</button>
+					<div id="modalSides-3" class="modal">
+						  <div class="modal-content">
+						  	 <span class="close">&times;</span>
+						  	 <h2>CUSTOMIZE YOUR ONION RINGS</h2>					  
+							
+							<h3>CONDIMENTS</h3>
+				<form>
+					<input type="radio" name="condiments" id="ketchup" value="Ketchup" checked>Ketchup<br>
+				    <input type="radio" name="condiments" id="Mustard" value="Mustard">Mustard<br>
+					<input type="radio" name="condiments" id="Ranch" value="Ranch">Ranch<br>
+				</form>
+					<button type="button" class="order-button" onclick="{customize('ONION RINGS',2.99,'modalSides-3')}">Order</button>
+					
+				</div>
+				</div>
+			</div>
+		</div>
+		<div id="beverageMenu" class="hiding">
+				
+			<div>
+				<button id="beverageBack" type="button" class="customize-button">Back to Menu</button>
+			</div>
+			<div style="width: 80%;">
+				<div class="panel" style="text-align: center;">
+					<h3> BEVERAGES </h3>
+				</div>
+			</div>	
+				<div class="beverageBlock">
+					<img src="coke.png" style="width: 70%">
+					<div class="panel2">
+					<h4 class="name">Coke</h4>
+					
+                        <h4>$<span class="price">1.99</span></h4>
+				</div>
+					<button type="button" class="order-button" onclick="{addFood('COKE',1.99)}">Order</button>
+					
+				</div>
+
+				<div class="beverageBlock">
+					<img src="sprite.jpg" style="width: 70%">
+					<div class="panel2">
+					<h4 class="name">Sprite</h4>
+					
+                        <h4>$<span class="price">1.99</span></h4>
+				</div>
+					<button type="button" class="order-button" onclick="{addFood('SPRITE',1.99)}">Order</button>
+				</div>
+				
+				
+				<div class="beverageBlock">
+					<img src="fanta.jpg" style="width: 70%">
+					<div class="panel2">
+					<h4 class="name">Fanta</h4>
+					
+                        <h4>$<span class="price">1.99</span></h4>
+				</div>
+					<button type="button" class="order-button" onclick="{addFood('FANTA',1.99)}">Order</button>
+					
+				</div>
+		</div>
+	</div>
+</body>
+</html>
+
